@@ -1,0 +1,7 @@
+.pendiente {
+    text-decoration: line-through;
+
+}
+.completada {
+    font-weight: bold;
+}

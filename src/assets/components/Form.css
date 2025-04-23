@@ -1,0 +1,30 @@
+#divIngreso {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#ingresoUsuario {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+#botonIngreso {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+#botonIngreso:hover {
+    background-color: #2563eb;
+}
