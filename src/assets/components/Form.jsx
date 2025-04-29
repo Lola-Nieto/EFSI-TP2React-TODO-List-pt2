@@ -1,5 +1,7 @@
 import React from 'react'
 import './Form.css'
+import FilterButtons from './FilterButtons.jsx'
+
 
 function Form() {
 
@@ -9,7 +11,7 @@ return (
         <form>
             <div id="divIngreso">
                 <input type="text" placeholder="Ingresa tu tarea" id="ingresoUsuario" name="ingresoUsuario" />
-                <button type="submit" id="botonIngreso"> Añadir Tarea</button>
+                <FilterButtons texto="Agregar" id ="botonIngreso"/>           
             </div>
         </form>
 

@@ -8,6 +8,7 @@ function List() {
 
     return (
       <>
+      
       <div id="mostrarLista">
         <ul id="UL">
            <li><Tarea textoTarea="Tarea filosofía" creadaMomento = "21/4/2025, 07:56:15" estado={true} completadaMomento="22/4/2025, 16:30:42" /></li>

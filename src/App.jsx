@@ -2,6 +2,7 @@ import './App.css'
 
 import Form from './assets/components/Form'
 import List from './assets/components/List'
+import FilterButtons from './assets/components/FilterButtons'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
      <h1>📝 Lista de Tareas</h1>
      <Form/>
      <List/>
-    
+     <FilterButtons/>
      
     </>
   )
