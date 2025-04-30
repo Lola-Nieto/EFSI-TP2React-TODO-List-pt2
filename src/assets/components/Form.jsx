@@ -1,6 +1,6 @@
 import React from 'react'
 import './Form.css'
-import FilterButtons from './FilterButtons.jsx'
+import Button from './Button.jsx'
 
 
 function Form() {
@@ -11,7 +11,7 @@ return (
         <form>
             <div id="divIngreso">
                 <input type="text" placeholder="Ingresa tu tarea" id="ingresoUsuario" name="ingresoUsuario" />
-                <FilterButtons texto="Agregar" id ="botonIngreso"/>           
+                <Button texto="Agregar" id ="botonIngreso"/>           
             </div>
         </form>
 

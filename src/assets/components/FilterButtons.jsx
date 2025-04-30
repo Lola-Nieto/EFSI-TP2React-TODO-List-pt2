@@ -6,7 +6,7 @@ function FilterButtons() {
 
     return (
       <>
-      <div className = "filtros" >            
+      <div className ="filtros" >            
         <Button texto="Completada"/>
         <Button texto="Eliminar"/>
         <Button texto="Eliminar completadas"/>

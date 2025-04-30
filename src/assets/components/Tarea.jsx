@@ -2,20 +2,22 @@ import React from 'react'
 import './Tarea.css'
 
 
-function Tarea({props}) {
-
-    return (
-      <>
-      <div className = "tarea" >
-
-            <p className={props.estado ? "completada" : "pendiente"}> {props.textoTarea} (creada: {props.creadaMomento}) {props.estado && completadaMomento} </p>
-            
-           
-            
-      </div>
-
-      </>
-    )
+function Tarea({tarea}) {
+  let info;
+  if (tarea.estado) {
+    return
+    <>
+      <p className="completada"> <span>{tarea.textoTarea}</span>  </p>
+      <p>  creada:<span>{tarea.creadaMomento}</span>  completada: <span>{tarea.completadaMomento}</span> </p> 
+    </>
+    info = 
+  }else{
+    return 
+    <>
+      <p className="pendiente"> <span>{tarea.textoTarea}</span>  </p>
+      <p>  creada:<span>{tarea.creadaMomento}</span>   </p> 
+    </>
+  }
   }
 
 
