@@ -5,3 +5,7 @@
 .pendiente {
     font-weight: bold;
 }
+#tarea{
+    display: flex;
+    
+}

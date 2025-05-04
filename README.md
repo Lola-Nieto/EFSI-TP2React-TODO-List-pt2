@@ -1,13 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# TP2-React-TODO-List-pt2_EFSI" 
+Mantuve los componentes propuestos en la consigna, solo que cambié los nombres (lo qeu sería Item en mi proyecto es una Tarea). También, aguegué otro componente que es el Button, el cual se usa para todos los botones de la página (agregar, completada, eliminar y eliminar copletadas), de los cuales los tres últimos forman parte de los botones de filtro, que está para que la página se divida en tres grandes partes: el input para ingresar una tarea con su botón para que se cree; la lista con las tareas pendientes y completadas; y la parte de los filterButtons, que contiene los botones ya mencionados. 

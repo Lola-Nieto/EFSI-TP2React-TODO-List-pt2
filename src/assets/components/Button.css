@@ -20,28 +20,3 @@ button:hover {
 }
 
 
-/*
-.acciones  {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    max-width: 600px;
-    justify-content: center;
-    background-color: var(--white);
-    color: var(--text);
-    border: 1px solid #d1d5db;
-    padding: 1.4rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: background-color var(--transition), color var(--transition);
-}
-
-.acciones:hover {
-    background-color: var(--danger);
-    color: var(--white);
-}
-
-*/
