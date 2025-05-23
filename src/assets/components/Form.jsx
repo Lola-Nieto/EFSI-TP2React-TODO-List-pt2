@@ -9,7 +9,6 @@ function Form() {
         creadaMomento: '',
         completada: false,
         completadaMomento: "",
-        checkeado: false
       });
     const [texto, setTexto] = useState("");
     const [creadaMomento, setCreadaMomento] = useState("");
@@ -28,16 +27,14 @@ function Form() {
         if (!formData[texto]) { //Si no tiene nada/es undefined/es null
             console.log('No hay texto ')
         }else{
-            setFormData(); 
+              setFormData({
+              ...formData, // Propaga todas las propiedades del objeto actual
+              creadaMomento: new Date().toISOString()  // Actualiza solo la propiedad 'age'
+            });
+            onAgregarTarea(formData);
         }
-        const valido = ValidarForm();
-        setEsValido(valido); // <-- Actualiza el estado según la validación
-        if (valido) {
-          onAgregarCita(formData);
-        } else {
-          console.log("Form inválido. Falta completar campos");
         }
-      };
+       
     
 return (
     <>

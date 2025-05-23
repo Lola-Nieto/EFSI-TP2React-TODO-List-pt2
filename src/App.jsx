@@ -28,8 +28,11 @@ function App() {
   }, [lista]); 
 
   const sacoDatosDelForm = (tarea) => {
-    console.log("Lo que llega a App.js:", tarea);
+    console.log("Lo que llega a App.js: ", tarea.texto, tarea.creadaMomento);
     const nuevaLista = [...lista, tareaNueva]; //Agrego la tarea a lista
+    setLista(nuevaLista);
+  }
+  const reemplazarLista = (nuevaLista) => {
     setLista(nuevaLista);
   }
 
@@ -37,8 +40,8 @@ function App() {
     <>
     
      <h1>📝 Lista de Tareas</h1>
-     <Form onAgregarCita={sacoDatosDelForm}/>
-     <List/>
+     <Form onAgregarTarea={sacoDatosDelForm}/>
+     <List listaTareas={lista} onEliminarTarea={reemplazarLista} onMarcarCompletada={actualizarTarea}/>
      <FilterButtons/>
      
     </>

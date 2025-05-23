@@ -4,19 +4,32 @@ import Tarea from './Tarea.jsx'
 
 
 
-function List() {
+function List(props) {
+
+    
+
+  let lista = props.listaCitas;
+  console.log("lista: "+lista)
+
+  const eliminarCita = (index) => {
+    const nuevaLista = lista.filter((_, i) => i !== index); //función para que se cree una copia y esta sea la que se modifica
+    props.onEliminarCita(nuevaLista);
+  };
+  
 
     return (
       <>
-      
-      <div id="mostrarLista">
-        <ul id="UL">
-          <li> <Tarea tarea = {{textoTarea : 'Tarea filosofía', creadaMomento : '21/4/2025, 07:56:15', completadaMomento : '22/4/2025, 16:30:42', estado : true }} /></li>
-          <li> <Tarea tarea = {{textoTarea : 'Tarea fuentes', creadaMomento : '20/4/2025, 15:30:51', completadaMomento : '20/4/2025, 20:30:43', estado : true }} /> </li>
-          <li> <Tarea tarea = {{textoTarea : 'Estudiar historia judía', creadaMomento : '20/4/2025, 08:21:15', estado : false }} /></li>
+      <div className = "lista-tareas">
+        
+        {lista.length > 0 &&
+          lista.map((tarea, index) => (
+          <Tarea key={index} tareaX={tarea} onEliminarTarea={() => eliminarTarea(index)} onMarcarCompletada={() => marcarCompletada(index)}/> 
+          ))
+        }
 
-        </ul>
-    </div>
+            
+          
+      </div>
       </>
     )
   }
