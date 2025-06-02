@@ -1,12 +1,13 @@
 import React from 'react'
 import './Tarea.css'
+import Button from './Button.jsx'
 
 
 function Tarea({ tareaX, onEliminarTarea, onMarcarCompletada }) { //recibe tarea e index
   return (
     <>
       <div className="tarea">
-
+      
         
       <p className={tareaX.completada ? 'completada' : 'pendiente'}>
         <span>{tareaX.textoTarea}</span>
@@ -17,8 +18,8 @@ function Tarea({ tareaX, onEliminarTarea, onMarcarCompletada }) { //recibe tarea
           <>  completada: <span>{tareaX.completadaMomento}</span> </>
         )}
       </p>
-      <Button type="" className="u-full-width button-primary" onClick={onEliminarTarea} id =""/> 
-      <Button type="" className="u-full-width button-primary" onClick={onMarcarCompletada} id =""/> 
+      <Button texto="🗑️" type="" className="u-full-width button-primary" onClick={onEliminarTarea} id =""/> 
+      <Button texto="✔️" type="" className="u-full-width button-primary" onClick={onMarcarCompletada} id =""/> 
 
       </div>
     </>
@@ -26,10 +27,10 @@ function Tarea({ tareaX, onEliminarTarea, onMarcarCompletada }) { //recibe tarea
 }
 
 
-
+/*
 return (
   <>
-  {console.log("Lo que llega a cita:" + citaX)}
+  {console.log('Lo que llega a cita:' + citaX)}
   <div className = "cita" >
 
    
@@ -42,8 +43,8 @@ return (
   </div>
   </>
 )
-}
 
+*/
 
 
 export default Tarea

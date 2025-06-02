@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react';
 import './Form.css'
 import Button from './Button.jsx'
 
 
-function Form() {
+function Form(props) {
     const [formData, setFormData] = useState({
         texto: '',
         creadaMomento: '',
@@ -24,14 +24,16 @@ function Form() {
       };
       const handleSubmit = (event) => {
         event.preventDefault();
-        if (!formData[texto]) { //Si no tiene nada/es undefined/es null
+        console.log('Entra al handleSubmit')
+        if (!formData[texto].trim()) { //Si no tiene nada/es undefined/es null
             console.log('No hay texto ')
         }else{
+        console.log('TIene texto el formDaat')
               setFormData({
               ...formData, // Propaga todas las propiedades del objeto actual
-              creadaMomento: new Date().toISOString()  // Actualiza solo la propiedad 'age'
+              creadaMomento: new Date().toISOString()  // Actualiza solo la propiedad 'creadaMomento'
             });
-            onAgregarTarea(formData);
+            props.onAgregarTarea(formData);
         }
         }
        
@@ -41,8 +43,8 @@ return (
         <h2>Crear mi Cita</h2>
         <form>
             <div id="divIngreso">
-                <input type="text" placeholder="Ingresa tu tarea" id="ingresoUsuario" name="ingresoUsuario" onChenage={handleChange}/>
-                <Button type="submit" className="u-full-width button-primary" onClick={handleSubmit} id ="botonIngreso"/>           
+                <input type="text" placeholder="Ingresa tu tarea" id="ingresoUsuario" name="texto" onChange={handleChange} value={formData.texto}/>
+                <Button texto="Agregar ➕" type="submit" className="u-full-width button-primary" onSubmit={handleSubmit} id ="botonIngreso"/>           
             </div>
         </form>
 

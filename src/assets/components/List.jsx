@@ -8,12 +8,17 @@ function List(props) {
 
     
 
-  let lista = props.listaCitas;
+  let lista = props.listaTareas;
   console.log("lista: "+lista)
 
-  const eliminarCita = (index) => {
+  const eliminarTarea = (index) => {
     const nuevaLista = lista.filter((_, i) => i !== index); //función para que se cree una copia y esta sea la que se modifica
-    props.onEliminarCita(nuevaLista);
+    props.onEliminarTarea(nuevaLista);
+  };
+
+  const marcarCompletada = (index) => {
+    let tarea = lista[index]; //Guardo la tarea y la envío por parámetro
+    props.onMarcarCompletada(tarea, index);
   };
   
 
@@ -21,12 +26,20 @@ function List(props) {
       <>
       <div className = "lista-tareas">
         
-        {lista.length > 0 &&
-          lista.map((tarea, index) => (
-          <Tarea key={index} tareaX={tarea} onEliminarTarea={() => eliminarTarea(index)} onMarcarCompletada={() => marcarCompletada(index)}/> 
-          ))
-        }
-
+          {lista
+          .filter(tarea => {
+            if (props.filtro === "completadas") return tarea.completada;
+            if (props.filtro === "pendientes") return !tarea.completada;
+            return true; // si el filtro no es ni "completadas" ni "pendientes", muestra todas
+          })
+          .map((tarea, index) => (
+            <Tarea
+              key={index}
+              tareaX={tarea}
+              onEliminarTarea={() => eliminarTarea(index)}
+              onMarcarCompletada={() => marcarCompletada(index)}
+            />
+          ))}
             
           
       </div>
