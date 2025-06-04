@@ -36,9 +36,13 @@ function Form(props) {
               ...formData, // Propaga todas las propiedades del objeto actual
               creadaMomento: new Date().toISOString()  // Actualiza solo la propiedad 'creadaMomento'
             });
+            const tareaConFecha = {
+              ...formData,
+              creadaMomento: new Date().toISOString(),
+            };
             console.log('formData.creadaMomento' + formData.creadaMomento)
 
-            props.onAgregarTarea(formData);
+            props.onAgregarTarea(tareaConFecha);
         }
         }
        

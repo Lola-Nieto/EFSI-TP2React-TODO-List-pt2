@@ -8,23 +8,13 @@ import Button from './assets/components/Button'
 
 function App() {
 
-  const [lista, setLista] = useState([]);
-    const [filtro, setFiltro] = useState("todas");
-
-
-//Cargo la lista de tareas
-  useEffect(() => {
+  const [lista, setLista] = useState(() => {
     const listaTareasJSON = localStorage.getItem("listaTareas");
-    const listaTareas = listaTareasJSON ? JSON.parse(listaTareasJSON) : [];
-    setLista(listaTareas);
-    console.log('listaTareas al cargarse: ', listaTareas);
-    console.log('lista luego de asignarle listaTareas: ', lista);
+    return listaTareasJSON ? JSON.parse(listaTareasJSON) : [];
+  });
 
-  }
+  const [filtro, setFiltro] = useState("todas");
   
-, []); //[] pq es únicamente al crear el componente
-
-
     // Actualizar localStorage cuando cambia lista
   useEffect(() => {
     console.log("lista que se guarda en localStorage: ", lista);

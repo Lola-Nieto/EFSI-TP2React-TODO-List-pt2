@@ -2,16 +2,3 @@ Mantuve los componentes propuestos en la consigna, solo que cambié los nombres 
 
 Cambié la lógica que había utilizado en el TP TODO parte 1 y a que las tareas no se van a almacenar en el LS cada una de forma individual, sino qeu se almacena la lista
 
-
-PROBLEMAS
-No trae las tareas guardadas en LS al principio
-En la 1er tarea q se ingresa no se guarda la hora --> pq??
-No hace salto de línea entre texto de tarea, momneotCreac, momentoCompletada
-
-YA ESTÁ
-Agregar tarea --> aparece con su date de creac
-Completar tarea
-Eliminar completadas
-Eliminar tarea
-FlterButtons funcionan
-Se guarda la tarea en LS

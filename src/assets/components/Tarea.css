@@ -7,6 +7,7 @@
 }
 .pendiente {
     font-weight: bold;
+    border-left: 5px solid var(--danger);
 }
 
 
@@ -16,8 +17,11 @@
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     transition: all var(--transition);
+}
+
+.botones{
+    display: flex;
+    align-items: center;
 }
