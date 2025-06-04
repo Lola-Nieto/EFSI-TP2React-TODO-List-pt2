@@ -30,7 +30,7 @@ function App() {
   }, [lista]); 
 
   const sacoDatosDelForm = (tarea) => {
-    console.log("Lo que llega a App.js: ", tarea.texto, tarea.creadaMomento);
+    console.log("Lo que llega a App.js: ", tarea.texto, tarea.creadaMomento, tarea.completada, tarea.completadaMomento);
     const nuevaLista = [...lista, tarea]; //Agrego la tarea a lista
     setLista(nuevaLista);
   }
@@ -40,14 +40,15 @@ function App() {
 const actualizarTarea = (tarea, index) => {
     tarea.completada = true; //Modifico el estado de la tarea --> Necesito guardarla en una nueva variable para q se modifique? 
     const nuevaLista = lista.map((item, i) => (i === index ? tarea : item)); // Crea una nueva lista con el elemento modificado
+    //console.log(`Se completó al tarea ${index}: ${tarea.completada}`)
     setLista(nuevaLista);
 
   }
   const cambiarFiltro = (filtro) => {
     setFiltro(filtro);
+    console.log('filtro'+filtro)
   }
   const eliminarCompletadas = () => {
-    
           const nuevaLista = lista.filter(tarea => !tarea.completada); //Que se guarden las tareas NO completadas
           setLista(nuevaLista);
   }

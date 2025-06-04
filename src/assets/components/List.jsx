@@ -28,8 +28,9 @@ function List(props) {
         
           {lista
           .filter(tarea => {
-            if (props.filtro === "completadas") return tarea.completada;
-            if (props.filtro === "pendientes") return !tarea.completada;
+            if (props.filtroTareas === "todas") return true;
+            if (props.filtroTareas === "completadas") return tarea.completada;
+            if (props.filtroTareas === "pendientes") return !tarea.completada;
             return true; // si el filtro no es ni "completadas" ni "pendientes", muestra todas
           })
           .map((tarea, index) => (

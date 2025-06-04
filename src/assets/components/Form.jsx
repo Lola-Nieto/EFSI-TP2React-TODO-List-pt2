@@ -10,8 +10,8 @@ function Form(props) {
         completada: false,
         completadaMomento: "",
       });
-    const [texto, setTexto] = useState("");
-    const [creadaMomento, setCreadaMomento] = useState("");
+   // const [texto, setTexto] = useState("");
+   // const [creadaMomento, setCreadaMomento] = useState("");
 
       const handleChange = (event) => {
         const { name, value } = event.target;
@@ -22,10 +22,13 @@ function Form(props) {
         console.log(`campo que cambió: ${name} valor qeu se guardó: ${value}`); //Va a ser siempre el texto
     
       };
+
+
       const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Entra al handleSubmit')
-        if (!formData[texto].trim()) { //Si no tiene nada/es undefined/es null
+        console.log('formData[texto].trim()'+ formData.texto.trim())
+        if (!formData.texto.trim()) { //Si no tiene nada/es undefined/es null
             console.log('No hay texto ')
         }else{
         console.log('TIene texto el formDaat')
@@ -33,6 +36,8 @@ function Form(props) {
               ...formData, // Propaga todas las propiedades del objeto actual
               creadaMomento: new Date().toISOString()  // Actualiza solo la propiedad 'creadaMomento'
             });
+            console.log('formData.creadaMomento' + formData.creadaMomento)
+
             props.onAgregarTarea(formData);
         }
         }
@@ -41,10 +46,10 @@ function Form(props) {
 return (
     <>
         <h2>Crear mi Cita</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div id="divIngreso">
                 <input type="text" placeholder="Ingresa tu tarea" id="ingresoUsuario" name="texto" onChange={handleChange} value={formData.texto}/>
-                <Button texto="Agregar ➕" type="submit" className="u-full-width button-primary" onSubmit={handleSubmit} id ="botonIngreso"/>           
+                <Button texto="Agregar ➕" type="submit" className="u-full-width button-primary" id ="botonIngreso"/>           
             </div>
         </form>
 

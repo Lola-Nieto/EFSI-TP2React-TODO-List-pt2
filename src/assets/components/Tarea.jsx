@@ -10,16 +10,17 @@ function Tarea({ tareaX, onEliminarTarea, onMarcarCompletada }) { //recibe tarea
       
         
       <p className={tareaX.completada ? 'completada' : 'pendiente'}>
-        <span>{tareaX.textoTarea}</span>
+       
       </p>
-      <p>
-        creada: <span>{tareaX.creadaMomento}</span>
-        {tareaX.completada && (
+      
+        <p>{tareaX.texto}</p>
+        <p> creada: <span>{tareaX.creadaMomento}</span> </p>
+        <p> {tareaX.completada && (
           <>  completada: <span>{tareaX.completadaMomento}</span> </>
-        )}
-      </p>
-      <Button texto="🗑️" type="" className="u-full-width button-primary" onClick={onEliminarTarea} id =""/> 
-      <Button texto="✔️" type="" className="u-full-width button-primary" onClick={onMarcarCompletada} id =""/> 
+        )} </p>
+      
+      <Button texto="🗑️" type="button" className="u-full-width button-primary" onClick={onEliminarTarea} id =""/> 
+      <Button texto="✔️" type="button" className="u-full-width button-primary" onClick={onMarcarCompletada} id =""/> 
 
       </div>
     </>

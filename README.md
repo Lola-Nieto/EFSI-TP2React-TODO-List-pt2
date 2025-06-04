@@ -4,4 +4,14 @@ Cambié la lógica que había utilizado en el TP TODO parte 1 y a que las tareas
 
 
 PROBLEMAS
-Se reinicia la página cuando agrego una tarea
+No se guarda la tarea en LS
+En la 1er tarea q se ingresa no se guarda la hora --> pq??
+No aparece momento completada
+No hace salto de línea entre texto de tarea, momneotCreac, momentoCompletada
+
+YA ESTÁ
+Agregar tarea --> aparece con su date de creac
+Completar tarea
+Eliminar completadas
+Eliminar tarea
+FlterButtons funcionan
