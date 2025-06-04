@@ -4,9 +4,8 @@ Cambié la lógica que había utilizado en el TP TODO parte 1 y a que las tareas
 
 
 PROBLEMAS
-No se guarda la tarea en LS
+No trae las tareas guardadas en LS al principio
 En la 1er tarea q se ingresa no se guarda la hora --> pq??
-No aparece momento completada
 No hace salto de línea entre texto de tarea, momneotCreac, momentoCompletada
 
 YA ESTÁ
@@ -15,3 +14,4 @@ Completar tarea
 Eliminar completadas
 Eliminar tarea
 FlterButtons funcionan
+Se guarda la tarea en LS

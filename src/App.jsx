@@ -18,6 +18,8 @@ function App() {
     const listaTareas = listaTareasJSON ? JSON.parse(listaTareasJSON) : [];
     setLista(listaTareas);
     console.log('listaTareas al cargarse: ', listaTareas);
+    console.log('lista luego de asignarle listaTareas: ', lista);
+
   }
   
 , []); //[] pq es únicamente al crear el componente
@@ -25,8 +27,8 @@ function App() {
 
     // Actualizar localStorage cuando cambia lista
   useEffect(() => {
+    console.log("lista que se guarda en localStorage: ", lista);
     localStorage.setItem("listaTareas", JSON.stringify(lista));//Reeemplazo lista q estaba antes en el LS
-
   }, [lista]); 
 
   const sacoDatosDelForm = (tarea) => {
@@ -39,6 +41,7 @@ function App() {
   }
 const actualizarTarea = (tarea, index) => {
     tarea.completada = true; //Modifico el estado de la tarea --> Necesito guardarla en una nueva variable para q se modifique? 
+    tarea.completadaMomento = new Date().toISOString();
     const nuevaLista = lista.map((item, i) => (i === index ? tarea : item)); // Crea una nueva lista con el elemento modificado
     //console.log(`Se completó al tarea ${index}: ${tarea.completada}`)
     setLista(nuevaLista);
